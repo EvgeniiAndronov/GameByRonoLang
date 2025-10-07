@@ -1,0 +1,33 @@
+chif main() {
+    var to_guess_s: int = randi(1, 100);
+    var count_trys: int = 1;
+    
+    var guess_inp: int = nil;
+
+    con.out("Input you first guess: ");
+
+    con.in(*guess_inp);
+    guess_inp = toInt(guess_inp);
+    
+    while (to_guess_s != guess_inp) {
+
+        if (to_guess_s < guess_inp) {
+            con.out("{guess_inp} is to much!");
+        }
+
+        if (to_guess_s > guess_inp) {
+            con.out("{guess_inp} is to low!");
+        }
+    
+        con.out("Incorrect! Input other option: ");
+    
+        con.in(*guess_inp);
+        guess_inp = toInt(guess_inp);
+    
+        count_trys = count_trys + 1;
+    }
+
+    if (to_guess_s == guess_inp) {
+        con.out("Yes! Correct! {to_guess_s} = {guess_inp}; Conts to try is {count_trys}");
+    }
+}
